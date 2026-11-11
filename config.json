@@ -1,0 +1,78 @@
+{
+ "camels_root": "data/camels_us",
+ "hourly_file": "hourly/usgs-streamflow-nldas_hourly.nc",
+ "basins": [
+  "01022500",
+  "01547700",
+  "02064000",
+  "03015500"
+ ],
+ "period": [
+  "2000-01-01",
+  "2002-12-31"
+ ],
+ "warmup_end": "2000-01-30",
+ "train_start": "2000-01-31",
+ "train_end": "2001-12-31",
+ "test_start": "2002-01-01",
+ "test_end": "2002-12-31",
+ "leads": [
+  1,
+  2,
+  3
+ ],
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "scarcity_seeds": [
+  0,
+  1,
+  2
+ ],
+ "mask_seeds": [
+  0,
+  1,
+  2
+ ],
+ "lgb": {
+  "learning_rate": 0.03,
+  "num_leaves": 15,
+  "n_estimators": 200,
+  "subsample": 0.8,
+  "subsample_freq": 1,
+  "colsample_bytree": 0.8,
+  "reg_lambda": 1.0,
+  "min_child_samples": 10
+ },
+ "crossfit": {
+  "n_blocks": 8,
+  "embargo_days": 7
+ },
+ "ace": {
+  "alpha": 0.2,
+  "eta": 0.05,
+  "alpha_int": 0.1,
+  "gamma": 0.01,
+  "n_min": 10,
+  "rolling_window": 40
+ },
+ "bootstrap": {
+  "n_boot": 2000,
+  "n_perm": 5000,
+  "block_weeks": [
+   1,
+   2,
+   4
+  ],
+  "seed": 0
+ },
+ "forcing_lag_days": {
+  "daymet": 0,
+  "maurer": 1,
+  "nldas": 0
+ }
+}
