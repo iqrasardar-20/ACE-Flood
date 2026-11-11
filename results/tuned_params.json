@@ -1,0 +1,9 @@
+{
+ "lgb_num_leaves": 7,
+ "lgb_n_estimators": 200,
+ "ridge_alpha": 100.0,
+ "logreg_C": 0.01,
+ "rf_leaf": 10,
+ "lstm_hidden": 16,
+ "lstm_epochs": 20
+}
